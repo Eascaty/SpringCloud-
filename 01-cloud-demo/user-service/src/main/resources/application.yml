@@ -12,6 +12,6 @@ mybatis:
     map-underscore-to-camel-case: true
 logging:
   level:
-    com.xn2001: debug
+    com.web: debug
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS

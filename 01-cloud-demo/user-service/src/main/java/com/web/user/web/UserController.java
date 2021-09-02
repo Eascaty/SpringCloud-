@@ -1,7 +1,7 @@
-package com.xn2001.user.web;
+package com.web.user.web;
 
-import com.xn2001.user.pojo.User;
-import com.xn2001.user.service.UserService;
+import com.web.user.pojo.User;
+import com.web.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

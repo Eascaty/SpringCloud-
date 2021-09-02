@@ -1,10 +1,10 @@
-package com.xn2001.user;
+package com.web.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.mybatis.spring.annotation.MapperScan;
 
-@MapperScan("com.xn2001.user.mapper")
+@MapperScan("com.web.user.mapper")
 @SpringBootApplication
 public class UserApplication {
     public static void main(String[] args) {

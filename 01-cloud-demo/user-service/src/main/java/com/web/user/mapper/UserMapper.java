@@ -1,6 +1,6 @@
-package com.xn2001.user.mapper;
+package com.web.user.mapper;
 
-import com.xn2001.user.pojo.User;
+import com.web.user.pojo.User;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 

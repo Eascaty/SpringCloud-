@@ -1,4 +1,4 @@
-package com.xn2001.user.pojo;
+package com.web.user.pojo;
 
 import lombok.Data;
 

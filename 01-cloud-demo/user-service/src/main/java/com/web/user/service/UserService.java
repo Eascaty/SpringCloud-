@@ -1,7 +1,7 @@
-package com.xn2001.user.service;
+package com.web.user.service;
 
-import com.xn2001.user.mapper.UserMapper;
-import com.xn2001.user.pojo.User;
+import com.web.user.mapper.UserMapper;
+import com.web.user.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

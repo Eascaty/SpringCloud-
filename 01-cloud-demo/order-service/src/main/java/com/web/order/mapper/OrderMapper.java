@@ -1,6 +1,6 @@
-package com.xn2001.order.mapper;
+package com.web.order.mapper;
 
-import com.xn2001.order.pojo.Order;
+import com.web.order.pojo.Order;
 import org.apache.ibatis.annotations.Select;
 
 public interface OrderMapper {

@@ -1,7 +1,7 @@
-package com.xn2001.order.web;
+package com.web.order.web;
 
-import com.xn2001.order.pojo.Order;
-import com.xn2001.order.service.OrderService;
+import com.web.order.pojo.Order;
+import com.web.order.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
