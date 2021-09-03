@@ -13,7 +13,8 @@ spring:
       server-addr: localhost:8848 # nacos服务地址
       discovery:
         cluster-name: HZ # 集群名称
-
+        namespace: f45760a1-500c-4ae8-b94a-667c2f6d39e5 #dev环境
+        ephemeral: false #是否是临时实例
 mybatis:
   type-aliases-package: com.web.user.pojo
   configuration:
