@@ -1,9 +1,9 @@
-package com.web.order.pojo;
+package com.web.feign.pojo;
 
 import lombok.Data;
 
 @Data
-public class User {
+public class   User {
     private Long id;
     private String username;
     private String address;

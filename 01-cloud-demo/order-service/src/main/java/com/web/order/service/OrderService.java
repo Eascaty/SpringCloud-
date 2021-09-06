@@ -1,13 +1,12 @@
 package com.web.order.service;
 
 
-import com.web.order.clients.UserClient;
+import com.web.feign.clients.UserClient;
+import com.web.feign.pojo.User;
 import com.web.order.mapper.OrderMapper;
 import com.web.order.pojo.Order;
-import com.web.order.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 @Service
 public class OrderService {
