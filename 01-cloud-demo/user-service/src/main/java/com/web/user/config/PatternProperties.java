@@ -3,7 +3,6 @@ package com.web.user.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 @Data
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class PatternProperties {
     private String dateformat;
     private String envSharedValue;
-
+    private String name;
 
 
 }
