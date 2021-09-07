@@ -11,18 +11,21 @@
         <module name="user-service" />
         <module name="eureka-server" />
         <module name="feign-api" />
+        <module name="Gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="01-cloud-demo" target="1.8" />
       <module name="eureka-server" target="1.8" />
       <module name="feign-api" target="1.8" />
+      <module name="Gateway" target="1.8" />
       <module name="order-service" target="1.8" />
       <module name="user-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Gateway" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="feign-api" options="-parameters" />
       <module name="order-service" options="-parameters" />
