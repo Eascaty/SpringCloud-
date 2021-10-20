@@ -1,0 +1,87 @@
+# NODEJS版本控制和切换删除
+
+nvm是node.js的版本管理器，可以安装和切换不同版本node.js
+
+### 第一步：Window下完全卸载删除Nodejs
+
+1.从卸载程序卸载程序和功能。
+
+2.重新启动（或者您可能会从任务管理器中杀死所有与节点相关的进程）。
+
+3.寻找这些文件夹并删除它们（及其内容）（如果还有）。根据您安装的版本，UAC设置和CPU架构，这些可能或可能不存在：
+
+C:\Program Files (x86)\Nodejs
+C:\Program Files\Nodejs
+C:\Users\{User}\AppData\Roaming\npm（或%appdata%\npm）
+C:\Users\{User}\AppData\Roaming\npm-cache（或%appdata%\npm-cache）
+
+4.检查您的%PATH%环境变量以确保没有引用Nodejs或npm存在。
+
+5.如果仍然没有卸载，请where node在命令提示符下键入，您将看到它所在的位置 - 删除（也可能是父目录）。
+
+6.重新启动，很好的措施。
+
+### 第二步：下载
+
+下载地址：https://github.com/coreybutler/nvm-windows/releases
+
+### 第三步：安装
+
+按照提示完成安装即可，安装完成后可以检测一下是否安装成功
+
+在cmd命令行输入nvm,如果出现nvm版本号和一系列帮助指令，则说明nvm安装成功。
+
+### 第四步：修改settings.txt
+
+在你安装的目录下找到settings.txt文件，打开后加上 
+node_mirror: https://npm.taobao.org/mirrors/node/ 
+npm_mirror: https://npm.taobao.org/mirrors/npm/
+
+这一步主要是将npm镜像改为淘宝的镜像，可以提高下载速度。
+
+
+
+### 第吴步：node.js 安装
+
+可以先使用 nvm list 查看本地已安装的版本
+
+然后使用 nvm list available 查看所有版本
+
+NVM常用命令
+nvm list 查看已经安装的版本
+nvm list installed 查看已经安装的版本
+nvm list available 查看网络可以安装的版本
+nvm version 查看当前的版本
+nvm install 安装最新版本nvm
+nvm use <version> ## 切换使用指定的版本node
+nvm ls 列出所有版本
+nvm current显示当前版本
+nvm alias <name> <version> ## 给不同的版本号添加别名
+nvm unalias <name> ## 删除已定义的别名
+nvm reinstall-packages <version> ## 在当前版本node环境下，重新全局安装指定版本号的npm包
+nvm on 打开nodejs控制
+nvm off 关闭nodejs控制
+nvm proxy 查看设置与代理
+nvm node_mirror [url] 设置或者查看setting.txt中的node_mirror，如果不设置的默认是 https://nodejs.org/dist/
+nvm npm_mirror [url] 设置或者查看setting.txt中的npm_mirror,如果不设置的话默认的是： https://github.com/npm/npm/archive/.
+nvm uninstall <version> 卸载制定的版本
+nvm use [version] [arch] 切换制定的node版本和位数
+nvm root [path] 设置和查看root路径
+
+
+
+# 安装nvm之后，node -v 提示'node' 不是内部或外部命令，也不是可运行的程序 或批处理文件
+
+​	网上已经有很多教程了，但是有的方法对却没有注意细节也会导致这个问题无法顺利解决。下面就注重方法+细节部分进行解决，我是成功了呦。
+
+​	出现这个情况时，扪心自问，用nvm安装新的nodejs后有咩有执行这个命令：nvm use [nodejs version name]
+nvm use v10.15.3
+
+​	如果已经执行了上述命令但还是报node不是内部命令云云，那么先检查  C:\Program Files\nodejs文件是否可用，一般来说应该是不可用的，我就删除了（你也可以不先删除，若是下面操作没有问题就说明该文件夹无影响）。
+来到这一步，就需要打开nvm这个文件夹了，我的是在这个位置：C:\Users\Administrator\AppData\Roaming\nvm，在nvm下面建一个文件夹nodejs，这个nodejs文件夹下面不要放任何东西，保持为空即可。
+然后打开控制面板—高级系统设置—高级--环境变量，将红色圈圈部分变量值设置为刚才nodejs文件夹所在位置
+设置好之后请务必关掉终端后，再打开。总之一定要重新进cmd
+此时，进到终端执行node -v估计还是之前的样子，此时需要先  nvm uninstall v10.15.3（上面示例里安装的nodejs），也就是最好卸载掉之前用nvm安装的node，然后再重新安装你所需要的各种版本的node。
+安装好node后，别忘了nvm use [your node version]。
+此时执行node -v，就正常显示版本了。
+​	总之，安装了nvm后一把辛酸泪。之前全局安装的node包，都要在上面这些正常后再重新全局安装过。
